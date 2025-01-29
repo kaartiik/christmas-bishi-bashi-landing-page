@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="prefetch" href="./images/carolling.jpg" />
+  <link rel="prefetch" href="./images/santas.jpg" />
+  <link rel="prefetch" href="./images/sleigh-queen.jpg" />
+  <link rel="prefetch" href="./images/snowball-fight.jpg" />
+  <link rel="prefetch" href="./images/thanksgiving.jpg" />
+  <link rel="prefetch" href="./images/tree-decorating.jpg" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js"
+    integrity="sha512-jGh38w63cHRzfBHtyKgEMMkJswUFXDA3YXrDjaE8ptzxV5DDkLDUDjtGUy5tmDkOXHWsItKfFjocaEtj1WuVnQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Start Something Presents: Christmas Card Builder</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137515892-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-137515892-1");
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-PRZRH32");
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "1483710481763334");
+    fbq("track", "PageView");
+  </script>
+  <!-- End Facebook Pixel Code -->
+  <noscript>
+    <img height="1" width="1" style="display: none"
+      src="https://www.facebook.com/tr?id=1483710481763334&ev=PageView&noscript=1" />
+  </noscript>
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZRH32" height="0" width="0"
+      style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="overlay">
+    <img src="./images/logo.png" alt="Start Something Presents: Christmas Card Builder" class="logo" />
+
+    <img src="./images/logo-mobile.png" alt="Start Something Presents: Christmas Card Builder" class="logo-mobile" />
+
+    <div class="button-wrapper">
+      <button id="makeCard" class="button primary make-card-btn">MAKE A CARD</button>
+      <button id="instructions" class="button secondary how-this-works-btn">
+        HOW THIS WORKS
+      </button>
+    </div>
+
+    <div class="how-this-works" hidden>
+      <div class="htw-button-wrapper">
+        <button class="button secondary arrow-btn back-btn">&lt;</button>
+        <button class="button secondary how-this-works-btn">
+          HOW THIS WORKS
+        </button>
+        <button class="button secondary arrow-btn forward-btn">&gt;</button>
+      </div>
+
+      <div class="page-one">
+        <p>
+          Send a festive interactive Christmas Card to your loved ones this
+          season!
+        </p>
+        <p>
+          With our Christmas card builder, send the gift of a fun mini game to
+          reveal your personalised message at the end.
+        </p>
+        <p>
+          Once you're done filling in the details, you can send a personalised
+          link to your friends to spread the Christmas Cheer! And perhaps,
+          they can even make one for themselves too!
+        </p>
+      </div>
+
+      <div class="page-two" hidden>
+        <img src="./images/artboard.png" alt="Bishi Bashi Preview" />
+        <p>
+          The mini game is a simple 'catch and collect' arcade game where you
+          play Dice, our Start Something mascot, as you try to catch 10
+          presents!
+        </p>
+      </div>
+
+      <p class="page-number-display">
+        <strong><span class="page-number">1</span> of 2 pages</strong>
+      </p>
+    </div>
+
+    <form class="form" autocomplete="off" hidden>
+      <label for="nameTo">TO:</label>
+      <input type="text" name="nameTo" id="nameTo" required />
+
+      <label for="nameFrom">FROM:</label>
+      <input type="text" name="nameFrom" id="nameFrom" required />
+
+      <label for="message">MESSAGE:</label>
+      <div class="textarea-wrapper">
+        <textarea name="message" id="message" rows="6" maxlength="200" required></textarea>
+
+        <p class="char-counter">
+          <span class="chars-left">200</span> / 200 characters left
+        </p>
+      </div>
+
+      <button type="submit" id="next" class="button primary next-button">NEXT</button>
+    </form>
+
+    <div class="carousel-container" hidden>
+      <div class="carousel">
+        <div class="carousel-wrapper">
+          <ul class="carousel-slider">
+            <li class="carousel-slide current-slide">
+              <img src="./images/carolling.jpg" alt="Carolling" title="Carolling" class="carousel-image" />
+            </li>
+
+            <li class="carousel-slide">
+              <img src="./images/tree-decorating.jpg" alt="Tree decorating" title="Tree decorating"
+                class="carousel-image" />
+            </li>
+
+            <li class="carousel-slide">
+              <img src="./images/thanksgiving.jpg" alt="Thanksgiving" title="Thanksgiving" class="carousel-image" />
+            </li>
+
+            <li class="carousel-slide">
+              <img src="./images/santas.jpg" alt="Santas" title="Santas" class="carousel-image" />
+            </li>
+
+            <li class="carousel-slide">
+              <img src="./images/sleigh-queen.jpg" alt="Sleigh queen" title="Sleigh queen" class="carousel-image" />
+            </li>
+
+            <li class="carousel-slide">
+              <img src="./images/snowball-fight.jpg" alt="Snowball fight" title="Snowball fight"
+                class="carousel-image" />
+            </li>
+          </ul>
+        </div>
+
+        <div class="carousel-button-wrapper">
+          <button class="carousel-button carousel-button-prev" type="button" hidden></button>
+
+          <button class="carousel-button carousel-button-next" type="button">
+            Tree decorating &gt;
+          </button>
+        </div>
+      </div>
+
+      <button type="button" id="selectCard" class="button primary create-card-button">
+        CREATE CARD
+      </button>
+    </div>
+
+    <div class="share-container" hidden>
+      <p>CLICK LINK TO COPY</p>
+      <input type="text" name="copy-link" id="copy-link" value="" />
+
+      <a href="#" target="_blank" rel="noreferrer" id="shareTele" class="share-link telegram-link">
+        <img src="./icons/telegram-icon.svg" alt="Telegram" class="share-icon" />
+        SHARE THIS VIA TELEGRAM
+      </a>
+
+      <a href="#" target="_blank" rel="noreferrer" data-action="share/whatsapp/share" id="shareWhatsapp" class="share-link whatsapp-link">
+        <img src="./icons/whatsapp-icon.svg" alt="WhatsApp" class="share-icon" />
+        SHARE THIS VIA WHATSAPP
+      </a>
+
+      <a href="https://www.startsomething.sg/" target="_blank" rel="noreferrer" id="visitSS" class="share-link website-link">
+        VISIT US AT OUR WEBSITE
+      </a>
+
+      <button type="button" class="button primary start-over-button">
+        START OVER
+      </button>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/carousel.js"></script>
+</body>
+
+</html>
