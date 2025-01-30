@@ -16,6 +16,8 @@ const closeButton = document.querySelector(".modal-footer button");
 const charsLeft = document.querySelector(".chars-left");
 const carouselContainer = document.querySelector(".carousel-container");
 const shareContainer = document.querySelector(".share-container");
+const createCard = document.getElementById("selectCard");
+
 
 let formData = {};
 
@@ -112,6 +114,10 @@ form.onsubmit = async (e) => {
 
   initializeCarousel();
 };
+
+createCard.addEventListener("click", function() {
+  window.location.href = "https://christmas-bishi-bashi-game.vercel.app/"; // Replace with your target URL
+});
 
 const showShareContainer = (id) => {
   carouselContainer.hidden = true;
